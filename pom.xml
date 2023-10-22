@@ -10,11 +10,13 @@
     <url>http://maven.apache.org</url>
 
     <properties>
+        <java.version>17</java.version>
         <spring-boot.version>3.1.5</spring-boot.version>
         <lombok.version>1.18.30</lombok.version>
         <openapi-doc.version>2.2.0</openapi-doc.version>
         <postgres.version>42.6.0</postgres.version>
         <h2-database.version>2.1.214</h2-database.version>
+        <commons-csv.version>1.10.0</commons-csv.version>
     </properties>
 
     <modules>
@@ -53,6 +55,11 @@
               <artifactId>lombok</artifactId>
               <version>${lombok.version}</version>
               <optional>true</optional>
+          </dependency>
+          <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-csv</artifactId>
+              <version>${commons-csv.version}</version>
           </dependency>
 
           <dependency>

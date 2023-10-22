@@ -1,0 +1,23 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: ph
+      POSTGRES_PASSWORD: phorest
+      POSTGRES_DB: phorestdb
+    ports:
+      - "5432:5432"
+  clients-api:
+    build: ./clients-api/
+    container_name: clients-api
+    depends_on:
+      - postgres
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/phorestdb
+      SPRING_DATASOURCE_USERNAME: ph
+      SPRING_DATASOURCE_PASSWORD: phorest

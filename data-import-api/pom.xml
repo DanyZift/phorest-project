@@ -13,6 +13,13 @@
   <name>data-import-api</name>
   <url>http://maven.apache.org</url>
   <dependencies>
+    <!-- Internal dependencies -->
+    <dependency>
+      <groupId>com.phorest.clients</groupId>
+      <artifactId>clients-api</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -45,6 +52,11 @@
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <optional>true</optional>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-csv</artifactId>
+      <version>${commons-csv.version}</version>
     </dependency>
     <dependency>
       <groupId>org.springframework.boot</groupId>
