@@ -3,15 +3,18 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.phorest</groupId>
+    <groupId>com.phorest.app</groupId>
     <artifactId>phorest-project</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  <groupId>com.phorest</groupId>
+
+  <groupId>com.phorest.purchases</groupId>
   <artifactId>purchases-api</artifactId>
   <version>1.0-SNAPSHOT</version>
   <name>purchases-api</name>
   <url>http://maven.apache.org</url>
+  <packaging>jar</packaging>
+
   <dependencies>
     <dependency>
       <groupId>org.springframework.boot</groupId>
@@ -24,12 +27,6 @@
     <dependency>
       <groupId>org.springdoc</groupId>
       <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.boot</groupId>
-      <artifactId>spring-boot-devtools</artifactId>
-      <scope>runtime</scope>
-      <optional>true</optional>
     </dependency>
     <dependency>
       <groupId>com.h2database</groupId>

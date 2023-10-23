@@ -4,6 +4,6 @@ WORKDIR /app
 
 COPY target/*.jar clients-api.jar
 
-EXPOSE 8080
+EXPOSE 8082
 
 CMD ["java", "-jar", "clients-api.jar"]

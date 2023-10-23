@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.phorest</groupId>
+    <groupId>com.phorest.app</groupId>
     <artifactId>phorest-project</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -10,13 +10,17 @@
     <url>http://maven.apache.org</url>
 
     <properties>
-        <java.version>17</java.version>
+        <project.java.version>17</project.java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring-boot.version>3.1.5</spring-boot.version>
         <lombok.version>1.18.30</lombok.version>
         <openapi-doc.version>2.2.0</openapi-doc.version>
         <postgres.version>42.6.0</postgres.version>
         <h2-database.version>2.1.214</h2-database.version>
         <commons-csv.version>1.10.0</commons-csv.version>
+        <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+        <phorest-clients.version>${project.version}</phorest-clients.version>
     </properties>
 
     <modules>
@@ -61,14 +65,6 @@
               <artifactId>commons-csv</artifactId>
               <version>${commons-csv.version}</version>
           </dependency>
-
-          <dependency>
-              <groupId>org.springframework.boot</groupId>
-              <artifactId>spring-boot-devtools</artifactId>
-              <version>${spring-boot.version}</version>
-              <scope>runtime</scope>
-              <optional>true</optional>
-          </dependency>
           <dependency>
               <groupId>com.h2database</groupId>
               <artifactId>h2</artifactId>
@@ -84,4 +80,32 @@
         </dependencies>
   </dependencyManagement>
 
+    <build>
+        <pluginManagement> <!-- this line here -->
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <configuration>
+                        <excludes>
+                            <exclude>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                            </exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>17</source>
+                        <target>17</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
 </project>

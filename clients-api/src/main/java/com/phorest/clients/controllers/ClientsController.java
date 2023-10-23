@@ -41,4 +41,6 @@ public class ClientsController {
     public void deleteClient(@PathVariable UUID id) {
         clientsService.deleteClient(id);
     }
+
+
 }
