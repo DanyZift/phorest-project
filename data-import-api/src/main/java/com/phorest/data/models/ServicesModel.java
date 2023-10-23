@@ -15,10 +15,9 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "services")
-public class ServiceModel {
+public class ServicesModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     private UUID appointmentId;

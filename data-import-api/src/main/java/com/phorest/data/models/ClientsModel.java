@@ -15,7 +15,6 @@ import java.util.UUID;
 public class ClientsModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     @Column(length = 50)
     private String firstName;

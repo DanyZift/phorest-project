@@ -1,5 +1,4 @@
-package com.phorest.data.models;
-
+package com.phorest.purchases.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -29,3 +28,4 @@ public class PurchasesModel {
     private Integer loyaltyPoints;
 
 }
+

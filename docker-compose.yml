@@ -9,18 +9,18 @@ services:
       POSTGRES_DB: phorestdb
     ports:
       - "5432:5432"
-#  data-import-api:
-#    build: ./data-import-api/
-#    container_name: data-import-api
-#    depends_on:
-#      - postgres
-#    ports:
-#      - "8081:8081"
-#    environment:
-#      SPRING_PROFILES_ACTIVE: local
-#      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/phorestdb
-#      SPRING_DATASOURCE_USERNAME: ph
-#      SPRING_DATASOURCE_PASSWORD: phorest
+  data-import-api:
+    build: ./data-import-api/
+    container_name: data-import-api
+    depends_on:
+      - postgres
+    ports:
+      - "8081:8081"
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/phorestdb
+      SPRING_DATASOURCE_USERNAME: ph
+      SPRING_DATASOURCE_PASSWORD: phorest
   clients-api:
     build: ./clients-api/
     container_name: clients-api
@@ -40,6 +40,30 @@ services:
       - postgres
     ports:
       - "8083:8083"
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/phorestdb
+      SPRING_DATASOURCE_USERNAME: ph
+      SPRING_DATASOURCE_PASSWORD: phorest
+  services-api:
+    build: ./services-api/
+    container_name: services-api
+    depends_on:
+      - postgres
+    ports:
+      - "8084:8084"
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/phorestdb
+      SPRING_DATASOURCE_USERNAME: ph
+      SPRING_DATASOURCE_PASSWORD: phorest
+  purchases-api:
+    build: ./purchases-api/
+    container_name: purchases-api
+    depends_on:
+      - postgres
+    ports:
+      - "8085:8085"
     environment:
       SPRING_PROFILES_ACTIVE: local
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/phorestdb

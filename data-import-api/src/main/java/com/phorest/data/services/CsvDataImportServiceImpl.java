@@ -4,7 +4,7 @@ import com.phorest.data.enums.GenderType;
 import com.phorest.data.models.AppointmentsModel;
 import com.phorest.data.models.ClientsModel;
 import com.phorest.data.models.PurchasesModel;
-import com.phorest.data.models.ServiceModel;
+import com.phorest.data.models.ServicesModel;
 import com.phorest.data.repository.AppointmentsRepository;
 import com.phorest.data.repository.ClientsRepository;
 import com.phorest.data.repository.PurchasesRepository;
@@ -100,11 +100,11 @@ public class CsvDataImportServiceImpl implements CsvDataImportService {
 
         try (CSVParser parser = csvFormat.parse(new InputStreamReader(file.getInputStream()))) {
 
-            List<ServiceModel> serviceModels = new ArrayList<>();
+            List<ServicesModel> serviceModels = new ArrayList<>();
 
             for(CSVRecord record : parser) {
 
-                ServiceModel service = ServiceModel.builder()
+                ServicesModel service = ServicesModel.builder()
                         .id(UUID.fromString(record.get(0)))
                         .appointmentId(UUID.fromString(record.get(1)))
                         .name(record.get(2))

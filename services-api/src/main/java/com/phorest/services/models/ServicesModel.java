@@ -1,7 +1,9 @@
-package com.phorest.data.models;
+package com.phorest.services.models;
 
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,8 +16,8 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "purchases")
-public class PurchasesModel {
+@Table(name = "services")
+public class ServicesModel {
 
     @Id
     private UUID id;

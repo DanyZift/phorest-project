@@ -15,7 +15,6 @@ import java.util.UUID;
 public class AppointmentsModel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
     @NonNull
