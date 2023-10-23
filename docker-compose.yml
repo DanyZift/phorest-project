@@ -9,9 +9,9 @@ services:
       POSTGRES_DB: phorestdb
     ports:
       - "5432:5432"
-  data-import-api:
-    build: ./data-import-api/
-    container_name: data-import-api
+  data-api:
+    build: ./data-api/
+    container_name: data-api
     depends_on:
       - postgres
     ports:

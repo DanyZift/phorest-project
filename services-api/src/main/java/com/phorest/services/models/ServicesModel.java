@@ -16,7 +16,7 @@ import java.util.UUID;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "services")
+@Table(name = "service")
 public class ServicesModel {
 
     @Id
