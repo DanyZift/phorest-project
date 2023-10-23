@@ -9,9 +9,9 @@
   </parent>
 
   <groupId>com.phorest.data</groupId>
-  <artifactId>data-import-api</artifactId>
+  <artifactId>data-api</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <name>data-import-api</name>
+  <name>data-api</name>
 
   <url>http://maven.apache.org</url>
   <packaging>jar</packaging>

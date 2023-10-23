@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.phorest.app</groupId>
     <artifactId>phorest-project</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
     <name>phorest-project</name>
     <url>http://maven.apache.org</url>
 
@@ -20,7 +22,6 @@
         <h2-database.version>2.1.214</h2-database.version>
         <commons-csv.version>1.10.0</commons-csv.version>
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
-        <phorest-clients.version>${project.version}</phorest-clients.version>
     </properties>
 
     <modules>
@@ -28,60 +29,66 @@
         <module>purchases-api</module>
         <module>appointments-api</module>
         <module>services-api</module>
-        <module>data-import-api</module>
+        <module>data-api</module>
     </modules>
 
-  <dependencyManagement>
-      <dependencies>
-          <dependency>
-              <groupId>org.springframework.boot</groupId>
-              <artifactId>spring-boot-starter-data-jpa</artifactId>
-              <version>${spring-boot.version}</version>
-          </dependency>
-          <dependency>
-              <groupId>org.springframework.boot</groupId>
-              <artifactId>spring-boot-starter-web</artifactId>
-              <version>${spring-boot.version}</version>
-          </dependency>
-          <dependency>
-              <groupId>org.springdoc</groupId>
-              <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
-              <version>${openapi-doc.version}</version>
-          </dependency>
-          <dependency>
-              <groupId>org.postgresql</groupId>
-              <artifactId>postgresql</artifactId>
-              <scope>runtime</scope>
-              <version>${postgres.version}</version>
-          </dependency>
-          <dependency>
-              <groupId>org.projectlombok</groupId>
-              <artifactId>lombok</artifactId>
-              <version>${lombok.version}</version>
-              <optional>true</optional>
-          </dependency>
-          <dependency>
-              <groupId>org.apache.commons</groupId>
-              <artifactId>commons-csv</artifactId>
-              <version>${commons-csv.version}</version>
-          </dependency>
-          <dependency>
-              <groupId>com.h2database</groupId>
-              <artifactId>h2</artifactId>
-              <version>${h2-database.version}</version>
-              <scope>test</scope>
-          </dependency>
-          <dependency>
-              <groupId>org.springframework.boot</groupId>
-              <artifactId>spring-boot-starter-test</artifactId>
-              <version>${spring-boot.version}</version>
-              <scope>test</scope>
-          </dependency>
-        </dependencies>
-  </dependencyManagement>
+    <dependencyManagement>
 
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-jpa</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring-boot.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springdoc</groupId>
+                <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+                <version>${openapi-doc.version}</version>
+            </dependency>
+          <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-graphql</artifactId>
+            <version>${spring-boot.version}</version>
+          </dependency>
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <scope>runtime</scope>
+                <version>${postgres.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+                <optional>true</optional>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-csv</artifactId>
+                <version>${commons-csv.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.h2database</groupId>
+                <artifactId>h2</artifactId>
+                <version>${h2-database.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring-boot.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <build>
-        <pluginManagement> <!-- this line here -->
+        <pluginManagement>
+            <!-- this line here -->
             <plugins>
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
